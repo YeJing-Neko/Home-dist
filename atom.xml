@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Yejing Neko~</title>
+  <subtitle>一个夜静的小窝~</subtitle>
+  <link href="https://home.i30.icu/" rel="alternate" type="text/html"/>
+  <link href="https://home.i30.icu/atom.xml" rel="self" type="application/atom+xml"/>
+  <id>https://home.i30.icu/</id>
+  <updated>2026-02-23T15:57:36.468Z</updated>
+  <language>zh_CN</language>
+  <entry>
+    <title>欢迎来到我的个人博客🎉</title>
+    <link href="https://home.i30.icu/posts/1aamain/" rel="alternate" type="text/html"/>
+    <id>https://home.i30.icu/posts/1aamain/</id>
+    <published>2026-02-21T14:17:00.000Z</published>
+    <updated>2026-02-21T14:17:00.000Z</updated>
+    <summary>第一篇文档嘿嘿，欢迎大家提建议🤗</summary>
+    <content type="html"><![CDATA[<h1><strong>欢迎来到夜静的小窝😘</strong></h1>
+<h2>感谢您的访问！接下来是一些介绍哦~</h2>
+<p><strong>其实最开始的时候我想要去修改这个项目：</strong>
+::github{repo="YeJing-Neko/Yejing-Neko-Home"}</p>
+<blockquote>
+<p>但是！我不会配置app密钥🥲
+这不直接完蛋了！
+呜呜呜  o(TヘTo)</p>
+</blockquote>
+<h2>好在我发现了Mizuki-Ultra这个模板</h2>
+<p>于是就开始着手修改..部署..</p>
+<h1>就像这样！我完成了人生中第一个博客的部署！😋</h1>
+<blockquote>
+<p>当然肯定也会有不足，希望大家提提建议啦~
+爱你们！😘</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>联系夜静</th>
+<th>联系方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>微信</td>
+<td>yejing201020</td>
+</tr>
+<tr>
+<td>QQ</td>
+<td>3619083200</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    <author>
+      <name>夜静-Yejing</name>
+    </author>
+    <category term="默认"></category>
+  </entry>
+  <entry>
+    <title>模组服服务端到底怎么选？</title>
+    <link href="https://home.i30.icu/posts/miaoserver/" rel="alternate" type="text/html"/>
+    <id>https://home.i30.icu/posts/miaoserver/</id>
+    <published>2026-02-23T16:40:00.000Z</published>
+    <updated>2026-02-23T16:40:00.000Z</updated>
+    <summary>我尝试制作了一个模组服务端,可是该怎么选择呢...</summary>
+    <content type="html"><![CDATA[<h1>😘 模组服与插件共存？｜俺也想要！</h1>
+<p>哈喽各位！这里是你们的<strong>夜静</strong>～ 😺</p>
+<p>作为一名MC的多年玩家和模组追随者，俺一直有个梦想：就是拥有一台自己的多玩法服务器！
+可是俺一直在想，到底什么服务端既能用插件轻松管理服务器，又能加载超酷的模组丰富玩法！相信很多服主都和俺一样，在“插件的便捷”和“模组的创意”之间反复横跳，总是犹豫不决。</p>
+<p>今天，夜静就用最详细的方式，带大各位彻底搞懂<strong>模组与插件的核心区别</strong>，以及<strong>3套经过夜静实测的共存方案</strong>，有理有据，新手也能一键抄作业～</p>
+<hr />
+<h2>一、模组 和 插件 核心差异 📚</h2>
+<p>很多萌新服主（夜静之前）会把模组（Mod）和插件（Plugin）搞混，其实呢它们的底层逻辑完全不同！夜静整理了一个对比表，请大家过目～</p>
+<h3>📊 核心对比表QAQ</h3>
+<table>
+<thead>
+<tr>
+<th>对比类型</th>
+<th>插件 (Plugin)</th>
+<th>模组 (Mod)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>核心</strong></td>
+<td>服务器管理与功能的增强 🛠️</td>
+<td>游戏内容与玩法的革新 ✨</td>
+</tr>
+<tr>
+<td><strong>底层依赖</strong></td>
+<td>基于Bukkit/Spigot/Paper API</td>
+<td>基于Forge/Fabric/NeoForge源码修改</td>
+</tr>
+<tr>
+<td><strong>客户端要求</strong></td>
+<td>玩家无需安装额外内容，即插即玩 🎉</td>
+<td>大型模组需玩家同步安装客户端或整合包</td>
+</tr>
+<tr>
+<td><strong>性能影响</strong></td>
+<td>轻量，对TPS影响极小</td>
+<td>重型模组可能导致TPS下降</td>
+</tr>
+<tr>
+<td><strong>典型代表</strong></td>
+<td>EssentialsX、LuckPerms、WorldEdit</td>
+<td>机械动力、农夫乐事、JEI</td>
+</tr>
+</tbody>
+</table>
+<h3>✨ 总结一下下</h3>
+<ul>
+<li><strong>插件</strong>：可以算是服务器的“管家”，负责权限、经济、传送等基础管理，不改变游戏核心玩法。（除非是大型RPG插件，夜静这里只拿最基础的举例哦 ฅ（ ̳• ◡ • ̳）ฅ ）</li>
+<li><strong>模组</strong>：游戏的“附加包”，负责添加新方块、新生物、新维度，彻底改变游戏游玩体验。</li>
+</ul>
+<p>这也是为什么俺们需要“共存”——既要用插件管服务器，又要用模组玩内容，简直两全其美！</p>
+<hr />
+<h2>二、为什么共存这么难呢？ ⚙️</h2>
+<p>咳咳～ 想实现共存，得先知道“难”在哪里！</p>
+<p>插件基于<strong>Bukkit API</strong>，采用“事件驱动”模式，不修改游戏核心代码；而模组基于<strong>Forge/Fabric</strong>，通过“类重写”直接修改游戏源码。两者的加载顺序和运行机制完全冲突，就像“油和水”，直接混合会导致服务器崩溃！</p>
+<p>此外，还有两个致命问题：</p>
+<ol>
+<li><strong>版本不兼容</strong>：比如Paper 1.21绝对无法直接加载Forge 1.21的模组。</li>
+<li><strong>冲突无提示</strong>：两个修改同一核心类的模组/插件，会导致服务器无声崩溃，排查难度极大。</li>
+</ol>
+<p>是不是感觉好麻烦（╥﹏╥）
+别担心！夜静整理了<strong>3种不同场景的共存方案</strong>，也是自己摸索出来的结果，希望大提提建议呀～</p>
+<hr />
+<h2>三、实测3套核心共存的方案 🌟</h2>
+<p>俺根据服务器规模和玩法需求，把共存方案分为了<strong>新手入门</strong>、<strong>进阶平衡</strong>、<strong>高级定制</strong>三类，每一套都附带有部署步骤和注意事项哦～</p>
+<h3>方案一：新手首选｜Mohist 混合服务器 🚀</h3>
+<p><strong>适合场景</strong>：中小型服务器、新手服主、想要快速上手共存的玩家。</p>
+<h4>🐾 方案介绍</h4>
+<p>Mohist是目前最成熟的<strong>Forge+Spigot混合服务器</strong>，作为Thermos、Cauldron的继承者，它完美融合了双API，支持同时加载Forge模组和Bukkit插件。（小墨墨我现在还在用QAQ）</p>
+<h4>✅ 核心优势</h4>
+<ul>
+<li>零门槛：无需手动打补丁，下载即运行。</li>
+<li>兼容性强：支持80%以上的主流模组和95%的插件。</li>
+<li>稳定性高：更新维护频繁，bug修复及时。</li>
+</ul>
+<h4>📝 部署步骤</h4>
+<ol>
+<li><strong>下载Mohist</strong>：前往<a href="https://mohistmc.com/">Mohist官方网站</a>，下载对应MC版本的服务端（推荐1.20.1）。</li>
+<li><strong>创建一个文件夹</strong>：新建<code>server</code>文件夹，放入Mohist的jar包，新建<code>start.bat</code>（启动脚本，文章结尾有补充的）。</li>
+<li><strong>启动服务器</strong>：运行<code>start.bat</code>，首次启动小墨墨会自动下载依赖，生成配置文件。</li>
+<li><strong>添加插件/模组</strong>：
+<ul>
+<li>插件放入<code>plugins</code>文件夹。</li>
+<li>模组放入<code>mods</code>文件夹。</li>
+</ul>
+</li>
+<li><strong>重启服务器</strong>：大功告成！你的模组插件共存服务器就搭建好啦～</li>
+</ol>
+<h4>⚠️ 注意事项</h4>
+<ul>
+<li>避免使用“双重修改”的模组/插件（比如同时安装两个背包扩展插件）。</li>
+<li>优先选择<strong>轻量级模组</strong>（如JEI、JourneyMap），大型模组可能导致性能下降。（大型模组需要服务端配置同等增高）</li>
+</ul>
+<hr />
+<h3>方案二：进阶平衡｜Paper + PaperForge 补丁 🛠️</h3>
+<p><strong>适合场景</strong>：追求高性能的服务器、需要稳定TPS的公益服、技术流服主。</p>
+<h4>🐾 方案介绍</h4>
+<p>如果你想保留Paper服务器的<strong>高性能优化</strong>（比如实体激活范围调整、TPS优化），又想加载少量模组，那么<strong>PaperForge补丁</strong>是最佳选择！</p>
+<p>它通过在Paper服务器上打兼容补丁，实现了“插件为主，模组为辅”的混合模式。</p>
+<h4>✅ 核心优势</h4>
+<ul>
+<li>性能拉满：保留Paper的所有优化，TPS稳定在20左右。</li>
+<li>灵活可控：可通过<code>paper.yml</code>配置模组白名单，只加载必要的模组。</li>
+<li>适合玩家大型服：支持高并发，玩家数量多也不卡顿。</li>
+</ul>
+<h4>📝 部署步骤（需要一点点技术哦～）</h4>
+<ol>
+<li><strong>准备环境</strong>：安装JDK 17、Git、Gradle。</li>
+<li><strong>克隆源码</strong>：打开终端，执行<code>git clone https://github.com/PaperMC/Paper</code>。</li>
+<li><strong>应用补丁</strong>：进入Paper目录，执行<code>./gradlew applyPatches --includes forge-compat</code>。</li>
+<li><strong>构建服务端</strong>：执行<code>./gradlew reobfJar</code>，构建完成后在<code>build/libs</code>找到jar包。</li>
+<li><strong>启动与配置</strong>：同Mohist，插件放<code>plugins</code>，模组放<code>mods</code>，在<code>paper.yml</code>中设置模组白名单。</li>
+</ol>
+<h4>⚠️ 注意一下</h4>
+<ul>
+<li>该方案<strong>不支持大型模组</strong>（如工业时代、神秘时代、机械动力）。</li>
+<li>适合加载<strong>辅助类模组</strong>（如JEI、ViaVersion、性能优化模组）。</li>
+</ul>
+<hr />
+<h3>方案三：高级定制｜Fabric + Cardboard 模组 🧩</h3>
+<p><strong>适合场景</strong>：Fabric生态爱好者、想要加载轻量级插件的模组服、小众玩法服务器。</p>
+<h4>🐾 方案介绍</h4>
+<p>Fabric作为轻量级模组加载器，本身不支持Bukkit插件，但通过<strong>Cardboard非官方模组</strong>，可以实现对部分插件的兼容。</p>
+<h4>✅ 核心优势</h4>
+<ul>
+<li>轻量高效：Fabric本身启动速度快，内存占用低。</li>
+<li>模组丰富：Fabric生态有大量创意轻量级模组。</li>
+<li>适合小众玩法：可搭配特色模组，打造独特服务器。</li>
+</ul>
+<h4>📝 部署步骤</h4>
+<ol>
+<li><strong>下载Fabric服务端</strong>：前往<a href="https://fabricmc.net/">Fabric官方网站</a>，下载服务端安装器。</li>
+<li><strong>安装Fabric</strong>：运行安装器，选择对应MC版本，生成服务端文件。</li>
+<li><strong>下载Cardboard</strong>：前往<a href="https://modrinth.com/">Modrinth</a>，下载Cardboard模组，放入<code>mods</code>文件夹。</li>
+<li><strong>添加插件/模组</strong>：
+<ul>
+<li>插件放入<code>plugins</code>文件夹（由Cardboard识别）。</li>
+<li>模组放入<code>mods</code>文件夹。</li>
+</ul>
+</li>
+<li><strong>启动服务器</strong>：运行启动脚本，即可实现Fabric模组与插件的共存。</li>
+</ol>
+<h4>⚠️ 注意事项</h4>
+<ul>
+<li><strong>兼容性有限</strong>：仅支持基础插件（如EssentialsX），复杂插件（如WorldEdit）可能无法运行。</li>
+<li>不支持Forge模组：Fabric和Forge无法直接混用，需使用Sinytra Connector等工具（仍处于Beta阶段）。</li>
+</ul>
+<hr />
+<h2>四、小指南｜保证共存服务器稳定运行 🐱</h2>
+<p>搭建完成后，想要服务器长期稳定运行，这些事项可以记住哦（⑅˃◡˂⑅）</p>
+<h3>1. 优先选择“服务端模组”</h3>
+<p>尽量选择<strong>仅需服务端安装</strong>的模组（如性能优化、怪物增强模组），避免让玩家安装大量客户端模组，降低入坑门槛。（毕竟很多模组的许可协议不同，模组多了玩家下载也不方便）</p>
+<h3>2. 一些优化工具</h3>
+<ul>
+<li><strong>插件端</strong>：XreatOptimizer（自动性能调优、TPS监控）。</li>
+<li><strong>模组端</strong>：ModernFix（Forge环境底层优化，减少启动时间和内存占用）。</li>
+</ul>
+<h3>3. 定期排查冲突</h3>
+<ul>
+<li>可以把服务器日志（log）扔给AI，定期检查一下模组/插件有没有冲突。</li>
+<li>采用“逐一排除法”：出现崩溃时，先移除所有模组/插件，再逐个添加，定位问题根源。（也可以是一半一半排查）</li>
+</ul>
+<h3>4. 控制模组/插件数量</h3>
+<ul>
+<li>插件建议不超过25个，模组建议不超过50个。</li>
+<li>避免功能重叠（比如同时安装两个经济插件）。</li>
+</ul>
+<h3>5. 备份！备份！备份！</h3>
+<p>重要的事情说三遍！每次更新模组/插件前，一定要备份<code>world</code>文件夹和配置文件的，防止数据丢失（ó﹏ò｡）！</p>
+<hr />
+<h2>五、一些推荐组合｜不同玩法的搭配 🎮</h2>
+<p>根据服务器玩法，俺为大家整理了一些好用的组合●ｖ●</p>
+<h3>🧾 生存公益服（推荐Mohist）</h3>
+<ul>
+<li><strong>插件</strong>：EssentialsX（基础功能）、LuckPerms（权限管理）、Vault（经济接口）、WorldEdit（世界编辑）。</li>
+<li><strong>模组</strong>：JEI（物品查询）、JourneyMap（地图）、ModernFix（优化）。</li>
+</ul>
+<h3>⚔️ 竞技PVP服（推荐Paper + PaperForge）</h3>
+<ul>
+<li><strong>插件</strong>：KitPvP（PVP套件）、Arena（竞技场）、AntiCheat（反作弊）、ViaVersion（跨版本）。</li>
+<li><strong>模组</strong>：Sodium（性能优化）、Lithium（逻辑优化）、ProtocolLib（协议支持）。</li>
+</ul>
+<h3>🔮 创意模组服（推荐Fabric + Cardboard）</h3>
+<ul>
+<li><strong>插件</strong>：EssentialsX（基础功能）、LuckPerms（权限管理）。</li>
+<li><strong>模组</strong>：Fabric API（前置）、Rei's Minimap（小地图）、Simple Storage Network（简易存储）。</li>
+</ul>
+<hr />
+<h2>最后的总结●▽● 🐾</h2>
+<p>好啦～ 以上就是俺为大家带来的<strong>模组服与插件共存小建议</strong>！～</p>
+<p>其实呀，共存的核心不是“强行混合”，而是“按需选择”。根据自己的服务器规模和玩法需求，选择合适的方案，就能实现“插件管管理，模组玩内容”的完美体验哦～</p>
+<h2>启动脚本（补充）</h2>
+<h3>🐱 最基础的 MC 服务器启动命令</h3>
+<pre><code>
+java -Xms1G -Xmx4G -jar 核心文件名.jar
+
+</code></pre>
+<h3>一点一点解释(<em>╹▽╹</em>)</h3>
+<p>| <code>java</code> | 调用电脑里的 Java 运行环境，告诉系统要运行 jar 文件</p>
+<p>| <code>-Xms1G</code> | 服务器启动时，先分配 <strong>1GB 内存</strong>（保底运行空间，G=GB）</p>
+<p>| <code>-Xmx4G</code> | 服务器运行中，最多能用 <strong>4GB 内存</strong>（上限，避免占满电脑内存）</p>
+<p>| <code>-jar</code> | 指定要运行的是 jar 格式的服务器核心文件</p>
+<p>| <code>核心文件名.jar</code> | 替换成你的服务器核心名（比如 <code>paper-1.20.1.jar</code>、<code>mohist-1.20.1.jar</code>）</p>
+<h3>✨ 看俺看俺！</h3>
+<ol>
+<li>
+<p>把这段命令复制到记事本，替换 <code>核心文件名.jar</code> 后，保存为 <code>启动服务器.bat</code>（Windows）/ <code>启动服务器.sh</code>（Linux），双击就能启动；</p>
+</li>
+<li>
+<p>内存数值可根据自己电脑/服务器调整：</p>
+<ul>
+<li>
+<p>4GB 内存的电脑：用 <code>java -Xms512M -Xmx2G -jar 核心文件名.jar</code>（M=MB）</p>
+</li>
+<li>
+<p>8GB 内存的电脑：用上面的 <code>1G/4G</code> 版本就刚好；</p>
+</li>
+</ul>
+</li>
+<li>
+<p>这是<strong>无任何额外优化</strong>的纯基础版本，只保证服务器能启动，适合新手先跑通流程～</p>
+</li>
+</ol>
+<h3>启动脚本补充总结 (*￣０￣)</h3>
+<ol>
+<li>
+<p>最基础的启动命令核心是 <code>java -Xms[初始内存] -Xmx[最大内存] -jar [核心名].jar</code>；</p>
+</li>
+<li>
+<p>新手优先用 <code>1G</code> 初始内存、<code>4G</code> 最大内存，适配绝大多数电脑；</p>
+</li>
+<li>
+<p>替换核心文件名后，保存为 .bat或.sh 文件即可一键启动啦✧(◍˃̶ᗜ˂̶◍)✩</p>
+</li>
+</ol>
+<blockquote>
+<p>如果这篇文章对你有帮助，记得夸夸夜静哦～ 爱你们（๑•̀ㅁ•́ฅ）
+顶图作者（抖音号）：EngineCat</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>夜静-Yejing</name>
+    </author>
+    <category term="经验"></category>
+  </entry>
+  <entry>
+    <title>这是一篇介绍文章😘</title>
+    <link href="https://home.i30.icu/posts/friend/" rel="alternate" type="text/html"/>
+    <id>https://home.i30.icu/posts/friend/</id>
+    <published>2026-02-22T12:55:00.000Z</published>
+    <updated>2026-02-22T12:55:00.000Z</updated>
+    <summary>不是我自己，而是我们自己！</summary>
+    <content type="html"><![CDATA[<h1>这篇文章的开头~</h1>
+<p>这是一篇特别的文章~ 献给我的朋友们！😘
+接下来我将为你介绍他们！</p>
+<h2>朋友展示区（´つヮ⊂︎）</h2>
+<h3>1、LingKong凌空</h3>
+<p><strong>凌空</strong>，一位IT专业的高中生，也是我最好的朋友，目前我们已经一起玩了4年了，也是我做短视频时的“最佳合作伙伴”嗯嗯对，我可以说他是一位非常厉害的潜力大佬！😋</p>
+<ul>
+<li>年龄：16</li>
+<li>在读学历：高中</li>
+<li>擅长专业：自动化，前端，Java等等</li>
+<li>兴趣爱好：无人机飞行，游戏，电脑，二次元等</li>
+</ul>
+<h3>2. M.Z.K慎</h3>
+<p><strong>MZK慎</strong>，初中生，和凌空一样是我第一次接触短视频时的伙伴，也是我的好朋友！</p>
+<ul>
+<li>年龄:14（应该是的）</li>
+<li>在读学历：初中</li>
+<li>擅长专业：暂不清楚</li>
+<li>兴趣爱好：游戏，小说等</li>
+</ul>
+<h3>3.小枫</h3>
+<p><strong>小枫</strong>，一个原神开服老登，但是他真的特别厉害的，我甘拜下风˘ᗜ˘，不过他也是一个非常细心的人，我很佩服他极强的心理素质！</p>
+<ul>
+<li>年龄：不清楚</li>
+<li>在读学历：高中（可能是吧）</li>
+<li>擅长专业：心理疏导，唱歌？，音乐等</li>
+<li>兴趣爱好：电子，二次元，音乐等</li>
+</ul>
+<h3>4.坠落der海星（Fl_starfish）</h3>
+<p><strong>海星</strong>，我的初中同学，在学校的好朋友！（love 高恒）</p>
+<ul>
+<li>年龄：15</li>
+<li>在读学历：初中</li>
+<li>擅长专业：羽毛球，摆烂，挖掘机？（ta说的我也不清楚）</li>
+<li>兴趣爱好：术力口，羽毛球，看书，找茬</li>
+</ul>
+<blockquote>
+<p>海星留言：你在期待什么？一脚崩飞！
+（ 内心OS:依旧高恒╮(￣⊿￣)╭ ）</p>
+</blockquote>
+<h2>结语(๑•̀ㅁ•́ฅ)</h2>
+<h3>朋友们也是非常的厉害好吧，欢迎大家继续找我投稿哦✧(◍˃̶ᗜ˂̶◍)✩</h3>
+<blockquote>
+<p>联系方式在置顶文章最后有哦&lt;(￣3￣)&gt;</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>夜静-Yejing</name>
+    </author>
+    <category term="日常"></category>
+  </entry>
+</feed>
